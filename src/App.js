@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from './components/search/search';
+import Info from './components/info/info';
+import GoogleMap from './components/google-map/google-map';
+import { useState } from 'react';
 
 function App() {
+
+  const [state, setstate] = useState({ ipData: null, searchHit: false })
+
+  let setDataToState = (data, searchHit) => {
+    setstate({ ipData: data, searchHit: searchHit });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search action={setDataToState} />
+      <Info ipData={state.ipData}
+        searchHit={state.searchHit} />
+      <GoogleMap ipData={state.ipData} />
     </div>
   );
+
 }
 
 export default App;
