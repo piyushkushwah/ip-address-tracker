@@ -6,9 +6,7 @@ import L from 'leaflet';
 
 export default function GoogleMap(props) {
 
-    const [state, setstate] = useState({ data: false })
     let storeMap = null;
-    let marker = React.createRef();
 
     const iconPerson = new L.Icon({
         iconUrl: icon,
