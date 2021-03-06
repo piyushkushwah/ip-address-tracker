@@ -53,11 +53,15 @@ export default function Search(props) {
                 }}>
 
                 <input onChange={inputValFunc}
-                    type="text" placeholder="Search..." />
+                    type="text" value={state.inputVal}
+                    placeholder="Search..." />
 
                 <div
                     className="fetch-button"
                     onClick={() => {
+                        if (!state.inputVal) {
+                            return alert('Please Enter IP Address')
+                        }
                         setstate({ loader: true });
                         props.action(null, true);
                         fetchData();

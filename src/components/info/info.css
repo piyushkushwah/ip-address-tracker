@@ -3,7 +3,6 @@
     background: white;
     padding: 30px 10px;
     padding-top: 40px;
-    /* border: 1px solid gray; */
     border-radius: 15px;
     width: 70%;
     position: absolute;
@@ -16,7 +15,6 @@
 }
 
 .info-child{
-    /* display: table-cell; */
     width: 20vw;
     text-align: start;
     padding: 0 30px;
@@ -50,4 +48,27 @@
 
 h1,h2{
     margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .info{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 0;
+        width: calc(80% - 20px);
+        top: 170px;
+    }
+    .info-child h2{
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.75rem;
+    }
+    .info-child{
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        border-left: none;
+    }
 }

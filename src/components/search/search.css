@@ -58,3 +58,9 @@
 .search::placeholder{
     color: black;
 }
+
+@media only screen and (max-width: 600px) {
+    .search .text-input{
+        width: 80%;
+    }
+}
